@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 $title = "Daftar Karyawan";
-ob_start(); // tampung isi konten
+ob_start();
 ?>
 
 <div class="main-container">
