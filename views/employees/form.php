@@ -5,7 +5,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $title = isset($data) ? "Edit Karyawan" : "Tambah Karyawan";
 
-// Ambil daftar divisi
 $divisionsFile = __DIR__ . '/../../config/division.json';
 $divisions = file_exists($divisionsFile)
     ? json_decode(file_get_contents($divisionsFile), true)

@@ -46,6 +46,6 @@ ob_start(); // tampung isi konten
 </div>
 
 <?php
-$content = ob_get_clean(); // simpan isi tampilan ke variabel $content
+$content = ob_get_clean();
 include __DIR__ . '/../layout/dashboard.php';
 ?>

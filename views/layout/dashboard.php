@@ -19,8 +19,10 @@ if (session_status() === PHP_SESSION_NONE) {
             class="<?= (($_GET['c'] ?? '') === 'Dashboard') ? 'active' : '' ?>">Dashboard</a>
         <a href="index.php?c=Employee&a=index"
             class="<?= (($_GET['c'] ?? '') === 'Employee' && ($_GET['a'] ?? '') === 'index') ? 'active' : '' ?>">Daftar Karyawan</a>
-        <a href="index.php?c=Employee&a=create"
-            class="<?= (($_GET['c'] ?? '') === 'Employee' && ($_GET['a'] ?? '') === 'create') ? 'active' : '' ?>">Tambah Karyawan</a>
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+            <a href="index.php?c=Employee&a=create"
+                class="<?= (($_GET['c'] ?? '') === 'Employee' && ($_GET['a'] ?? '') === 'create') ? 'active' : '' ?>">Tambah Karyawan</a>
+        <?php endif; ?>
         <div style="margin-top:auto; padding:15px;">
             <a href="index.php?c=Auth&a=logout" class="logout-btn">Logout</a>
         </div>
